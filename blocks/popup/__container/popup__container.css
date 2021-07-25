@@ -3,13 +3,11 @@
   height: 330px;
   background-color: white;
   border-radius: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 195px auto;
   padding-bottom: 37px;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {
