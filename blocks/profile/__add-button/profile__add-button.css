@@ -9,7 +9,8 @@
   cursor: pointer;
   margin-left: auto;
   background-color: #000;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
+  border-radius: 2px;
   transition: opacity .2s ease;
   opacity: 1;
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
 </head>
 <body class="page">
@@ -14,58 +14,56 @@
     </header>
     <main>
       <section class="profile">
-        <div class="profile__avatar-container">
           <img class="profile__avatar" src="./images/kusto.png" alt="аватар профиля">
-        </div>
         <div class="profile__info">
           <h1 class="profile__user-name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" type="button"></button>
+          <button class="profile__edit-button" aria-label="изменить данные профиля" type="button"></button>
           <p class="profile__user-job">Исследователь океана</p>
         </div>
         <button class="profile__add-button" type="button"></button>
       </section>
-      <section>
-        <ul class="photo">
-          <li class="photo__card">
-            <img class="photo__image" alt="фото, добавленное пользователями" src="./images/karachaevsk.jpg">
-            <div class="photo__info">
-              <h3 class="photo__title">Карачаевск</h3>
-              <button class="photo__like-button"></button>
+      <section class="elements">
+        <ul class="elements__cards-list">
+          <li class="elements__card">
+            <img class="elements__image" alt="Фотография Карачаевска" src="./images/karachaevsk.jpg">
+            <div class="elements__info">
+              <h3 class="elements__title">Карачаево-Черкессия</h3>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </li>
-          <li class="photo__card">
-            <img class="photo__image" alt="фото, добавленное пользователями" src="./images/elbrus.jpg">
-            <div class="photo__info">
-              <h3 class="photo__title">Гора Эльбрус</h3>
-              <button class="photo__like-button"></button>
+          <li class="elements__card">
+            <img class="elements__image" alt="Фотография Эльбруса" src="./images/elbrus.jpg">
+            <div class="elements__info">
+              <h3 class="elements__title">Гора Эльбрус</h3>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </li>
-          <li class="photo__card">
-            <img class="photo__image" alt="фото, добавленное пользователями" src="./images/dombai.jpg">
-            <div class="photo__info">
-              <h3 class="photo__title">Домбай</h3>
-              <button class="photo__like-button"></button>
+          <li class="elements__card">
+            <img class="elements__image" alt="Фотография Домбая" src="./images/dombai.jpg">
+            <div class="elements__info">
+              <h3 class="elements__title">Домбай</h3>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </li>
-          <li class="photo__card">
-            <img class="photo__image" alt="фото, добавленное пользователями" src="./images/Dagestan.jpeg">
-            <div class="photo__info">
-              <h3 class="photo__title">Дагестан</h3>
-              <button class="photo__like-button"></button>
+          <li class="elements__card">
+            <img class="elements__image" alt="Фотография Дагестана" src="./images/Dagestan.jpeg">
+            <div class="elements__info">
+              <h3 class="elements__title">Дагестан</h3>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </li>
-          <li class="photo__card">
-            <img class="photo__image" alt="фото, добавленное пользователями" src="./images/Baikal.jpeg">
-            <div class="photo__info">
-              <h3 class="photo__title">Озеро Байкал</h3>
-              <button class="photo__like-button"></button>
+          <li class="elements__card">
+            <img class="elements__image" alt="Фотография Байкала" src="./images/Baikal.jpeg">
+            <div class="elements__info">
+              <h3 class="elements__title">Озеро Байкал</h3>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </li>
-          <li class="photo__card">
-            <img class="photo__image" alt="фото, добавленное пользователями" src="./images/Karelia.jpeg">
-            <div class="photo__info">
-              <h3 class="photo__title">Карелия</h3>
-              <button class="photo__like-button"></button>
+          <li class="elements__card">
+            <img class="elements__image" alt="Фотография Карелии" src="./images/Karelia.jpeg">
+            <div class="elements__info">
+              <h3 class="elements__title">Карелия</h3>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </li>
         </ul>
@@ -74,17 +72,17 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <div class="popup">
       <div class="popup__container">
-        <button class="popup__close-button"></button>
+        <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form">
-          <input type="text" class="popup__form-username" name="username" value="Жак-Ив Кусто" placeholder="Имя пользователя" minlength="2" maxlength="16" required>
-          <input type="text" class="popup__form-user-job" name="job" value="Исследователь океана" placeholder="Ваш род деятельности" minlength="2" maxlength="46" required>
+        <form class="popup__form" name="popup">
+          <input type="text" class="popup__info popup__info_username" name="username" value="Жак-Ив Кусто" placeholder="Имя пользователя" minlength="2" maxlength="16" required>
+          <input type="text" class="popup__info popup__info_job" name="job" value="Исследователь океана" placeholder="Ваш род деятельности" minlength="2" maxlength="46" required>
           <button type="submit" class="popup__submit-button">Сохранить</button>
         </form>
       </div>
-    </section>
+    </div>
   </div>
   <script src="./scripts/script.js"></script>
 </body>

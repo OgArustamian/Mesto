@@ -16,12 +16,12 @@ submitButton.addEventListener('click', popupToggle);
 
 //изменение данных при отправке формы
 let form = document.querySelector('.popup__form');
-let nameInput = form.querySelector('.popup__form-username');
-let jobInput = form.querySelector('.popup__form-user-job');
+let nameInput = form.querySelector('.popup__info_type_username');
+let jobInput = form.querySelector('.popup__info_type_job');
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
-  let username = wrapper.querySelector('.profile__user-name');
+  let username = wrapper.querySelector('.popup__info_username');
   let userJob = wrapper.querySelector('.profile__user-job');
   username.textContent = nameInput.value;
   userJob.textContent = jobInput.value;

@@ -1,23 +1,31 @@
-.popup__form-user-job {
+.popup__info {
   display: block;
   font-size: 14px;
   line-height: 17px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px 0 13px 5px;
-  margin: 0 auto 48px;
+  padding: 0 0 13px 0;
+  margin: 0 auto 30px;
   width: 358px;
 }
 
-.popup__form-user-job:focus {
+.popup__info:last-of-type {
+  margin-bottom: 48px;
+}
+
+.popup__info:focus {
   outline: none;
   border: 2px solid blue;
   opacity: .7;
 }
 
 @media screen and (max-width: 768px) {
-  .popup__form-user-job {
-    margin-bottom: 45px;
+  .popup__info {
     width: 238px;
   }
+
+  .popup__info:last-of-type {
+    margin-bottom: 45px;
+  }
 }
+
