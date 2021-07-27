@@ -3,3 +3,9 @@
   grid-template-columns: repeat(2, minmax(min-content, max-content));
   align-self: center;
 }
+
+@media screen and (max-width: 768px) {
+  .profile__info {
+    margin-left: 35px;
+  }
+}

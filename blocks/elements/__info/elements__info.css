@@ -9,3 +9,8 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 768px) {
+  .elements__info {
+    padding-right: 21px;
+  }
+}
