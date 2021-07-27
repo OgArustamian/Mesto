@@ -13,5 +13,6 @@
     font-size: 14px;
     line-height: 17px;
     margin: 14px auto 36px;
+    max-width: 282px;
   }
 }

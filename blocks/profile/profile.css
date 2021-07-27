@@ -3,6 +3,7 @@
   max-width: 882px;
   min-height: 120px;
   padding: 40px 0 51px;
+  gap: 30px;
 }
 
 @media screen and (max-width: 768px) {
