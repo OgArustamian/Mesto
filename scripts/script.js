@@ -9,14 +9,14 @@ let nameInput = form.querySelector('.popup__info_type_username');
 let jobInput = form.querySelector('.popup__info_type_job');
 
 //открытие попапа со вставкой данных из profile в форму
-function popupOpen() {
+function openPopup() {
   nameInput.value = username.textContent;
   jobInput.value = userJob.textContent;
   popup.classList.add('popup_opened');
 }
 
 //закрытие попапа
-function popupClose() {
+function closePopup() {
   popup.classList.remove('popup_opened');
 }
 
@@ -25,9 +25,9 @@ function formSubmitHandler(evt) {
   evt.preventDefault();
   username.textContent = nameInput.value;
   userJob.textContent = jobInput.value;
-  popupClose();
+  closePopup();
 }
 
-profileEditButton.addEventListener('click', popupOpen);
-popupCloseButton.addEventListener('click', popupClose);
+profileEditButton.addEventListener('click', openPopup);
+popupCloseButton.addEventListener('click', closePopup);
 form.addEventListener('submit', formSubmitHandler);

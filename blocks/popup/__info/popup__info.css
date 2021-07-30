@@ -13,12 +13,6 @@
   margin-bottom: 48px;
 }
 
-.popup__info:focus {
-  outline: none;
-  border: 2px solid blue;
-  opacity: .7;
-}
-
 @media screen and (max-width: 768px) {
   .popup__info {
     width: 238px;
