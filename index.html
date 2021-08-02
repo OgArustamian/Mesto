@@ -22,6 +22,7 @@
         </div>
         <button class="profile__add-button" type="button"></button>
       </section>
+
       <section class="elements">
         <ul class="elements__cards-list">
           <li class="elements__card">
@@ -74,11 +75,13 @@
           </li>
         </ul>
       </section>
+
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
-    <div class="popup">
+
+    <div class="popup popup__edit-profile">
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -89,7 +92,31 @@
         </form>
       </div>
     </div>
+
+    <div class="popup popup__add-image">
+      <div class="popup__container">
+        <button class="popup__close-button" type="button"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" name="popup-add-image" id="popup-add-image">
+          <input type="text" class="popup__info popup__info_type_image-title" name="image-title" placeholder="Название" minlength="2" required>
+          <input type="text" class="popup__info popup__info_type_image-source name="image-source" placeholder="Ссылка на картинку" required>
+          <button type="submit" class="popup__submit-button">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <template id="elements__template">
+      <li class="elements__card">
+        <button class="elements__delete-button" type="button"></button>
+        <img class="elements__image">
+        <div class="elements__info">
+          <h3 class="elements__title"></h3>
+          <button class="elements__like-button" type="button"></button>
+      </li>
+    </template>
+
   </div>
+  <script src="./scripts/popup.js"></script>
   <script src="./scripts/script.js"></script>
 </body>
 </html>
