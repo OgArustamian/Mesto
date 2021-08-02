@@ -1,13 +1,13 @@
-const wrapper = document.querySelector('.wrapper');
 //переменные для кнопок
-const profileEditButton = wrapper.querySelector('.profile__edit-button');
-const profileAddButton = wrapper.querySelector('.profile__add-button');
-const popupCloseButton = wrapper.querySelectorAll('.popup__close-button');
+const profileEditButton = document.querySelector('.profile__edit-button');
+const profileAddButton = document.querySelector('.profile__add-button');
+const popupCloseButton = document.querySelectorAll('.popup__close-button');
+const RemoveButton = document.querySelector('.elements__delete-button');
 //переменные для попапа
-const editProfilePopup = wrapper.querySelector('.popup__edit-profile');
-const addImagePopup = wrapper.querySelector('.popup__add-image');
-const username = wrapper.querySelector('.profile__user-name');
-const userJob = wrapper.querySelector('.profile__user-job');
+const editProfilePopup = document.querySelector('.popup__edit-profile');
+const addImagePopup = document.querySelector('.popup__add-image');
+const username = document.querySelector('.profile__user-name');
+const userJob = document.querySelector('.profile__user-job');
 //переменные формы
 const editProfileForm = document.querySelector('#popup-edit-profile');
 const nameInput = editProfileForm.querySelector('.popup__info_type_username');
@@ -44,6 +44,14 @@ const initialCards = [
     source: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+//добавление карточек по-умолчанию
+initialCards.forEach((element) => {
+  const cardElements = elementsTemplate.content.firstElementChild.cloneNode(true);
+  cardElements.querySelector('.elements__title').textContent = element.title;
+  cardElements.querySelector('.elements__image').src = element.source;
+  elementsList.insertBefore(cardElements, elementsList.firstChild);
+});
 
 //функционал добавления новых карточек на страницу
 addImageForm.addEventListener('submit', (evt) => {
