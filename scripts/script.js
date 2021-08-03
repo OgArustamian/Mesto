@@ -55,6 +55,10 @@ function addCards(card) {
   newElements.querySelector('.elements__delete-button').addEventListener('click', (evt) => {
     evt.target.closest('.elements__card').remove();
   });
+  //закрашивание лайка
+  newElements.querySelector('.elements__like-button').addEventListener('click', (evt) => {
+    evt.target.classList.toggle('elements__like-button_active');
+  });
 }
 
 //добавление новых карточек
