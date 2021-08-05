@@ -67,6 +67,7 @@ function initCards(card) {
     zoomImagePopup.classList.add('popup__zoom-image_opened');
     document.querySelector('.popup__image-title').textContent = newElements.querySelector('.elements__title').textContent;
     document.querySelector('.popup__image').src = newElements.querySelector('.elements__image').src;
+    document.querySelector('.popup__image').alt = newElements.querySelector('.elements__image').alt;
   });
 }
 
