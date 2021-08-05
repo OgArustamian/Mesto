@@ -5,7 +5,7 @@ const popupCloseButton = document.querySelectorAll('.popup__close-button');
 //переменные для попапа
 const editProfilePopup = document.querySelector('.popup__edit-profile');
 const addImagePopup = document.querySelector('.popup__add-image');
-const zoomImagePopup = document.querySelector('.popup__zoom-image');
+const zoomImagePopup = document.querySelector('.popup__zoom');
 const username = document.querySelector('.profile__user-name');
 const userJob = document.querySelector('.profile__user-job');
 //переменные формы изменения данных профиля
@@ -64,6 +64,7 @@ function initCards(card) {
   //зум для карточек
   const popupImage = document.querySelector('.elements__image');
   popupImage.addEventListener('click', (evt) => {
+    evt.preventDefault();
     zoomImagePopup.classList.add('popup__zoom-image_opened');
     document.querySelector('.popup__image-title').textContent = newElements.querySelector('.elements__title').textContent;
     document.querySelector('.popup__image').src = newElements.querySelector('.elements__image').src;
