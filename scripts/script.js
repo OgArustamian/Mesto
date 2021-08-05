@@ -3,9 +3,9 @@ const profileEditButton = document.querySelector('.profile__edit-button');
 const profileAddButton = document.querySelector('.profile__add-button');
 const popupCloseButton = document.querySelectorAll('.popup__close-button');
 //переменные для попапа
-const editProfilePopup = document.querySelector('.popup__edit-profile');
-const addImagePopup = document.querySelector('.popup__add-image');
-const zoomImagePopup = document.querySelector('.popup__zoom');
+const editProfilePopup = document.querySelector('.popup_edit-profile');
+const addImagePopup = document.querySelector('.popup_add-image');
+const zoomImagePopup = document.querySelector('.popup_zoom');
 const username = document.querySelector('.profile__user-name');
 const userJob = document.querySelector('.profile__user-job');
 //переменные формы изменения данных профиля
@@ -65,7 +65,7 @@ function initCards(card) {
   const popupImage = document.querySelector('.elements__image');
   popupImage.addEventListener('click', (evt) => {
     evt.preventDefault();
-    zoomImagePopup.classList.add('popup__zoom_opened');
+    zoomImagePopup.classList.add('popup_zoom_opened');
     document.querySelector('.popup__image-title').textContent = newElements.querySelector('.elements__title').textContent;
     document.querySelector('.popup__image').src = newElements.querySelector('.elements__image').src;
     document.querySelector('.popup__image').alt = newElements.querySelector('.elements__image').alt;
@@ -85,21 +85,21 @@ addImageForm.addEventListener('submit', (evt) => {
 
 //открытие попапа со вставкой данных из profile в форму
 function editProfile() {
-  editProfilePopup.classList.add('popup__edit-profile_opened');
+  editProfilePopup.classList.add('popup_edit-profile_opened');
   nameInput.value = username.textContent;
   jobInput.value = userJob.textContent;
 }
 
 //открытие попапа добавления карточек
 function openImagePopup() {
-  addImagePopup.classList.add('popup__add-image_opened');
+  addImagePopup.classList.add('popup_add-image_opened');
 }
 
 //закрытие попапа
 function closePopup() {
-  addImagePopup.classList.remove('popup__add-image_opened');
-  editProfilePopup.classList.remove('popup__edit-profile_opened');
-  zoomImagePopup.classList.remove('popup__zoom_opened');
+  addImagePopup.classList.remove('popup_add-image_opened');
+  editProfilePopup.classList.remove('popup_edit-profile_opened');
+  zoomImagePopup.classList.remove('popup_zoom_opened');
 }
 
 //изменение данных при отправке формы
