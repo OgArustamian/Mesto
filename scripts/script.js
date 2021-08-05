@@ -65,7 +65,7 @@ function initCards(card) {
   const popupImage = document.querySelector('.elements__image');
   popupImage.addEventListener('click', (evt) => {
     evt.preventDefault();
-    zoomImagePopup.classList.add('popup__zoom-image_opened');
+    zoomImagePopup.classList.add('popup__zoom_opened');
     document.querySelector('.popup__image-title').textContent = newElements.querySelector('.elements__title').textContent;
     document.querySelector('.popup__image').src = newElements.querySelector('.elements__image').src;
     document.querySelector('.popup__image').alt = newElements.querySelector('.elements__image').alt;
@@ -99,7 +99,7 @@ function openImagePopup() {
 function closePopup() {
   addImagePopup.classList.remove('popup__add-image_opened');
   editProfilePopup.classList.remove('popup__edit-profile_opened');
-  zoomImagePopup.classList.remove('popup__zoom-image_opened');
+  zoomImagePopup.classList.remove('popup__zoom_opened');
 }
 
 //изменение данных при отправке формы
