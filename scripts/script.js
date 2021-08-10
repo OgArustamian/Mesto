@@ -27,10 +27,9 @@ initialCards.forEach((initialCard) => {
   addCard(newCard);
 });
 
+//создание шаблона карточек
 function createCard(card) {
   const newCard = elementsTemplate.content.firstElementChild.cloneNode(true);
-  const elementImage = newCard.querySelector('.elements__image');
-  const elementTitle = newCard.querySelector('.elements__title');
   newCard.querySelector('.elements__title').textContent = card.title;
   newCard.querySelector('.elements__image').src = card.source;
   newCard.querySelector('.elements__image').alt = card.title;
@@ -43,15 +42,16 @@ function createCard(card) {
     evt.target.classList.toggle('elements__like-button_active');
   });
   //зум для карточек
-  newCard.querySelector('.elements__image').addEventListener('click', (evt) => {
+  newCard.querySelector('.elements__image').addEventListener('click', () => {
     openPopup(zoomImagePopup);
-    popupImageTitle.textContent = elementTitle.textContent;
-    popupImage.src = elementImage.src;
-    popupImage.alt = elementImage.alt;
+    popupImageTitle.textContent = card.title;
+    popupImage.src = card.source;
+    popupImage.alt = card.title;
   });
   return newCard;
 }
 
+//добавление карточек в начало списка
 function addCard(card) {
   elementsList.prepend(card);
 }
@@ -100,10 +100,9 @@ profileAddButton.addEventListener('click', () => {
   openPopup(addImagePopup);
 });
 popupCloseButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    closePopup(addImagePopup);
-    closePopup(editProfilePopup);
-    closePopup(zoomImagePopup);
+  button.addEventListener('click', (evt) => {
+    const closeButton = evt.target.closest('.popup');
+    closePopup(closeButton);
   });
 });
 
