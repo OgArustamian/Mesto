@@ -1,0 +1,14 @@
+.popup__input-error {
+  color: #FF0000;
+  font-size: 12px;
+  line-height: 15px;
+  display: block;
+  width: 358px;
+  margin: 0 auto 13px;
+  visibility: hidden;
+}
+
+/* popup__input-error:last-of-type почему-то не срабатывает */
+span:last-of-type {
+  margin-bottom: 32px;
+}

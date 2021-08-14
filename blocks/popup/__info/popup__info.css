@@ -5,21 +5,17 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0 0 13px 0;
-  margin: 0 auto 22px;
+  margin: 0 auto 5px;
   width: 358px;
 }
 
-.popup__info:last-of-type {
-  margin-bottom: 48px;
-}
 
 @media screen and (max-width: 768px) {
   .popup__info {
     width: 238px;
   }
-
-  .popup__info:last-of-type {
-    margin-bottom: 45px;
-  }
 }
 
+.popup__info_type_error {
+  border-bottom: 1px solid #FF0000;
+}

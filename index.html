@@ -33,9 +33,11 @@
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" name="popup-edit-profile" id="popup-edit-profile">
-          <input type="text" class="popup__info popup__info_type_username" name="username" value="Жак-Ив Кусто" placeholder="Имя пользователя" minlength="2" maxlength="16" required>
-          <input type="text" class="popup__info popup__info_type_job" name="job" value="Исследователь океана" placeholder="Ваш род деятельности" minlength="2" maxlength="46" required>
+        <form class="popup__form" name="popup-edit-profile" id="popup-edit-profile" novalidate>
+          <input type="text" id="name-input" class="popup__info popup__info_type_username" name="username" value="Жак-Ив Кусто" placeholder="Имя пользователя" minlength="2" maxlength="40" required>
+          <span class="popup__input-error name-input-error">вы пропустили это поле</span>
+          <input type="text" id="job-input" class="popup__info popup__info_type_job" name="job" value="Исследователь океана" placeholder="Ваш род деятельности" minlength="2" maxlength="200" required>
+          <span class="popup__input-error job-input-error">вы пропустили это поле</span>
           <button type="submit" class="popup__submit-button">Сохранить</button>
         </form>
       </div>
@@ -44,9 +46,11 @@
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form" name="popup-add-image" id="popup-add-image">
-          <input type="text" class="popup__info popup__info_type_image-title" name="image-title" placeholder="Название" minlength="2" required>
-          <input type="url" class="popup__info popup__info_type_image-source" name="image-source" placeholder="Ссылка на картинку" required>
+        <form class="popup__form" name="popup-add-image" id="popup-add-image" novalidate>
+          <input type="text" id="title-input" class="popup__info popup__info_type_image-title" name="image-title" placeholder="Название" minlength="2" required>
+          <span class="popup__input-error title-input-error">вы пропустили это поле</span>
+          <input type="url" id="source-input" class="popup__info popup__info_type_image-source" name="image-source" placeholder="Ссылка на картинку" required>
+          <span class="popup__input-error source-input-error">вы пропустили это поле</span>
           <button type="submit" class="popup__submit-button">Создать</button>
         </form>
       </div>
