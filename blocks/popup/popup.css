@@ -14,5 +14,7 @@
   overflow: hidden;
 }
 
-
+.popup:hover {
+  cursor: pointer;
+}
 

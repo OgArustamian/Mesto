@@ -106,3 +106,11 @@ popupCloseButtons.forEach((button) => {
   });
 });
 
+
+const openedPopup = document.querySelectorAll('.popup_opened');
+openedPopup.forEach((overlay) => {
+  overlay.addEventListener('click', (evt) => {
+    const popup = evt.target.closest('.popup');
+    closePopup(popup);
+  });
+});

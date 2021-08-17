@@ -23,6 +23,16 @@ function checkInputValidity(formElement, inputElement, elements) {
   };
 };
 
+const toggleSubmitButton = (inputList, buttonElement, elements) => {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add(elements.inactiveButtonClass);
+    buttonElement.setAttribute('disabled', true);
+  } else {
+    buttonElement.classList.remove(elements.inactiveButtonClass);
+    buttonElement.removeAttribute('disabled');
+  };
+};
+
 //добавления слушателя событий для input
 function setEventListeners(formElement, elements) {
   const inputList = Array.from(formElement.querySelectorAll(elements.inputSelector));
@@ -37,34 +47,24 @@ function setEventListeners(formElement, elements) {
 };
 
 //функция валидации
-const enableValidation = (elements = {
+function enableValidation(elements) {
+  const formList = Array.from(document.querySelectorAll(elements.formSelector));
+  formList.forEach(function(formElement){
+    setEventListeners(formElement, elements);
+  });
+};
+
+enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__submit-button',
   inactiveButtonClass: 'popup__submit-button_disabled',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__input-error_active'
-}) => {
-  const formList = Array.from(document.querySelectorAll(elements.formSelector));
-  formList.forEach(function(formElement){
-      setEventListeners(formElement, elements);
-  });
-};
+});
 
 function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 };
-
-const toggleSubmitButton = (inputList, buttonElement, elements) => {
-  if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(elements.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
-  } else {
-    buttonElement.classList.remove(elements.inactiveButtonClass);
-    buttonElement.removeAttribute('disabled');
-  };
-};
-
-enableValidation();
