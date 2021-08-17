@@ -1,4 +1,4 @@
-.popup__info {
+.popup__input {
   display: block;
   font-size: 14px;
   line-height: 17px;
@@ -9,13 +9,9 @@
   width: 358px;
 }
 
-
 @media screen and (max-width: 768px) {
-  .popup__info {
+  .popup__input {
     width: 238px;
   }
 }
 
-.popup__info_type_error {
-  border-bottom: 1px solid #FF0000;
-}

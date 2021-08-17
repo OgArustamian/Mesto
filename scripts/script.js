@@ -12,12 +12,12 @@ const popupImageTitle = document.querySelector('.popup__image-title');
 const popupImage = document.querySelector('.popup__image');
 //переменные формы изменения данных профиля
 const editProfileForm = document.querySelector('#popup-edit-profile');
-const nameInput = editProfileForm.querySelector('.popup__info_type_username');
-const jobInput = editProfileForm.querySelector('.popup__info_type_job');
+const nameInput = editProfileForm.querySelector('.popup__input_type_username');
+const jobInput = editProfileForm.querySelector('.popup__input_type_job');
 //переменные секции с карточками
 const addImageForm = document.querySelector('#popup-add-image')
-const titleInput = addImageForm.querySelector('.popup__info_type_image-title');
-const sourceInput = addImageForm.querySelector('.popup__info_type_image-source');
+const titleInput = addImageForm.querySelector('.popup__input_type_image-title');
+const sourceInput = addImageForm.querySelector('.popup__input_type_image-source');
 const elementsList = document.querySelector('.elements__cards-list');
 const elementsTemplate = document.querySelector("#elements__template");
 const cardsArray = [];
