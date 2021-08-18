@@ -7,7 +7,7 @@ function showInputError(formElement, inputElement, errorMessage, elements) {
 };
 
 //функция скрытия ошибок
-function hideInputError(formElement, inputElement) {
+function hideInputError(formElement, inputElement, elements) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(elements.inputErrorClass);
   errorElement.classList.remove(elements.errorClass);
@@ -20,17 +20,7 @@ function checkInputValidity(formElement, inputElement, elements) {
     showInputError(formElement. inputElement, inputElement.validationMessage, elements);
   } else {
     hideInputError(formElement, inputElement, elements);
-  };
-};
-
-const toggleSubmitButton = (inputList, buttonElement, elements) => {
-  if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(elements.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
-  } else {
-    buttonElement.classList.remove(elements.inactiveButtonClass);
-    buttonElement.removeAttribute('disabled');
-  };
+  }
 };
 
 //добавления слушателя событий для input
@@ -49,9 +39,26 @@ function setEventListeners(formElement, elements) {
 //функция валидации
 function enableValidation(elements) {
   const formList = Array.from(document.querySelectorAll(elements.formSelector));
-  formList.forEach(function(formElement){
+  formList.forEach((formElement) => {
     setEventListeners(formElement, elements);
   });
+
+};
+
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  });
+};
+
+const toggleSubmitButton = (inputList, buttonElement, elements) => {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add(elements.inactiveButtonClass);
+    buttonElement.setAttribute('disabled', true);
+  } else {
+    buttonElement.classList.remove(elements.inactiveButtonClass);
+    buttonElement.removeAttribute('disabled');
+  }
 };
 
 enableValidation({
@@ -63,8 +70,3 @@ enableValidation({
   errorClass: 'popup__input-error_active'
 });
 
-function hasInvalidInput(inputList) {
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  });
-};

@@ -87,11 +87,15 @@ editProfileForm.addEventListener('submit', handleProfileFormSubmit);
 //открытие попапа
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeWithEsc);
+  document.addEventListener('mousedown', closeWithClick);
 }
 
 //закрытие попапа
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeWithEsc);
+  document.removeEventListener('mousedown', closeWithClick);
 }
 
 //открытие/закрытие попапа по клику
@@ -106,11 +110,18 @@ popupCloseButtons.forEach((button) => {
   });
 });
 
+//закрытие попапа по клику на клавишу ESC
+function closeWithEsc(evt) {
+  if (evt.keyCode === 27) {
+    const popupToClose = document.querySelector('.popup_opened');
+    closePopup(popupToClose);
+  }
+};
 
-const openedPopup = document.querySelectorAll('.popup_opened');
-openedPopup.forEach((overlay) => {
-  overlay.addEventListener('click', (evt) => {
-    const popup = evt.target.closest('.popup');
-    closePopup(popup);
-  });
-});
+//закрытие попапа кликом вне формы
+function closeWithClick(evt) {
+  const targetedPopup = evt.target.closest('.popup');
+  if (evt.target === targetedPopup) {
+    closePopup(targetedPopup);
+  }
+};
