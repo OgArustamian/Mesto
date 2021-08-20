@@ -69,6 +69,7 @@ addImageForm.addEventListener('submit', (evt) => {
   addImageForm.reset();
   const popupSubmitButton = addImageForm.querySelector('.popup__submit-button');
   popupSubmitButton.classList.add('popup__submit-button_disabled');
+  popupSubmitButton.disabled = true
 });
 
 //открытие попапа со вставкой данных из profile в форму
