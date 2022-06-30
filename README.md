@@ -16,8 +16,3 @@
 * [Yandex Browser](https://browser.yandex.ru/?from=suggest&utm_source=suggest&banerid=5000004765)
 * [Mozilla Firefox](https://www.mozilla.org/ru/firefox/new/)
 * [Microsoft Edge](https://www.microsoft.com/ru-ru/edge)
-
-## Планируется добавить
-1. Счетчик лайков
-2. Возможность редактирования аватара пользователя
-3. Бэкенд
